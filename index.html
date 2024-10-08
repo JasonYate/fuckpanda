@@ -1,0 +1,16 @@
+<script>
+  function checkLink() {
+    fetch('fuckpanda://fuckpanda/')
+      .then(response => {
+        if (response.ok) {
+          window.location.href = 'fuckpanda://fuckpanda/';
+        } else {
+          window.location.href = 'https://www.dropbox.com/scl/fi/ez8vob4umbssnx63vlvad/FuckPanda_1.0.apk?rlkey=0rce733xvg2nu0tnvcgq5vf7o&st=yti5ugs7&dl=1';
+        }
+      })
+      .catch(error => {
+        window.location.href = 'https://www.dropbox.com/scl/fi/ez8vob4umbssnx63vlvad/FuckPanda_1.0.apk?rlkey=0rce733xvg2nu0tnvcgq5vf7o&st=yti5ugs7&dl=1';
+      });
+  }
+  checkLink();
+</script>
