@@ -1,12 +1,17 @@
 <script>
   function checkLink() {
-    // Intenta abrir la app mediante el esquema personalizado
-    window.location.href = 'fuckpanda://fuckpanda/';
+    // Crear un iframe invisible
+    var iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = "fuckpanda://fuckpanda/";
 
-    // Si la app no se abre en un tiempo determinado (1-2 segundos), redirige a Dropbox
+    // Agregar el iframe al documento
+    document.body.appendChild(iframe);
+
+    // Si la app no se abre después de 1.5 segundos, redirige al enlace de Dropbox
     setTimeout(function() {
       window.location.href = 'https://www.dropbox.com/scl/fi/ez8vob4umbssnx63vlvad/FuckPanda_1.0.apk?rlkey=0rce733xvg2nu0tnvcgq5vf7o&st=yti5ugs7&dl=1';
-    }, 1500); // Espera 1.5 segundos antes de redirigir al enlace de Dropbox
+    }, 1500); // Ajusta el tiempo de espera si es necesario
   }
 
   checkLink();
